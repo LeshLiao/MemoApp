@@ -1,3 +1,3 @@
 # Memo Memo App
 
-![Screenshot](Screenshot.png)
+[<img src="Screenshot.png" width="250"/>](Screenshot.png)
