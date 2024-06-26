@@ -1,5 +1,6 @@
 package com.plcoding.roomguideandroid
 
+import android.icu.text.CaseMap.Title
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.*
@@ -17,6 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.material.TopAppBar
+import androidx.compose.ui.text.style.TextAlign
 
 @Composable
 fun ContactScreen(
@@ -24,6 +27,19 @@ fun ContactScreen(
     onEvent: (ContactEvent) -> Unit
 ) {
     Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = "Memo Memo",
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Center
+                    )
+                },
+                backgroundColor = MaterialTheme.colors.primary,
+                contentColor = Color.White
+            )
+        },
         floatingActionButton = {
             FloatingActionButton(onClick = {
                 onEvent(ContactEvent.ShowDialog)
@@ -44,6 +60,9 @@ fun ContactScreen(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            item {
+                Divider(color = Color.Gray, modifier = Modifier.fillMaxWidth().width(3.dp))
+            }
             item {
                 Column(
                     modifier = Modifier
